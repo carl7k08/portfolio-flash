@@ -144,7 +144,7 @@ function App() {
     formDataToSend.append('portfolioData', JSON.stringify(dataPayload))
 
     try {
-      const response = await axios.post('http://localhost:3000/generate', formDataToSend, { responseType: 'blob' })
+      const response = await axios.post('/generate', formDataToSend, { responseType: 'blob' })
       const url = window.URL.createObjectURL(new Blob([response.data]))
       const link = document.createElement('a')
       link.href = url
